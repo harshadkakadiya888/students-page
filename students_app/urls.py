@@ -1,5 +1,7 @@
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter, Response
+
+from students_app import admin
 from .views import StudentViewSet
 from .views import home
 
@@ -12,4 +14,5 @@ def home(request):
 urlpatterns = [
     path('', include(router.urls)),
     path('',home, name='home'),
+    path('admin/', admin.site.urls),
 ]
