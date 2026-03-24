@@ -3,6 +3,7 @@ from rest_framework.response import Response
 from .models import Student
 from .serializers import StudentSerializer
 from rest_framework import viewsets
+from django.http import HttpResponse
 
 class StudentViewSet(viewsets.ModelViewSet):
     queryset = Student.objects.all()
@@ -22,4 +23,7 @@ def get_students(request):
             serializer.save()
             return Response(serializer.data)
             return Response(serializer.errors)
+
+def home(request):
+    return HttpResponse("Render deploy working")
         
