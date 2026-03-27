@@ -14,5 +14,5 @@ def home(request):
 urlpatterns = [
     path('', include(router.urls)),
     path('',home, name='home'),
-    path('admin/', admin.site.urls),
+    # path('admin/', admin.site.urls),
 ]
